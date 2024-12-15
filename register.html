@@ -5,14 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Ensure the body takes at least the full height of the screen */
+            font-family: Arial, sans-serif; 
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            text-align: center;
         }
 
         .header {
@@ -24,13 +33,16 @@
             justify-content: space-between;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
+
         .header img {
-            max-height: 50px;
+            max-height: 40px; 
         }
+
         .header nav {
             display: flex;
             gap: 25px;
         }
+
         .header nav a {
             color: white;
             text-decoration: none;
@@ -38,17 +50,20 @@
             font-weight: bold;
             transition: color 0.3s;
         }
+
         .header nav a:hover {
             color: #ffd700;
         }
+
         .header-icons {
             display: flex;
             align-items: center;
             gap: 20px;
         }
+
         .header-icons img {
-            width: 24px;
-            height: 24px;
+            width: 28px; 
+            height: 28px; 
             cursor: pointer;
         }
 
@@ -59,19 +74,23 @@
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            flex-grow: 1; /* Allow the container to take up remaining space */
+            flex-grow: 1; 
         }
+
         .container h2 {
             text-align: center;
             margin-bottom: 20px;
         }
+
         .form-group {
             margin-bottom: 20px;
         }
+
         .form-group label {
             display: block;
             margin-bottom: 5px;
         }
+
         .form-group input {
             width: 100%;
             padding: 12px;
@@ -79,9 +98,11 @@
             border-radius: 5px;
             font-size: 14px;
         }
+
         .form-group input:focus {
             border-color: #004a9f;
         }
+
         .form-group button {
             width: 100%;
             padding: 12px;
@@ -92,9 +113,11 @@
             font-size: 16px;
             cursor: pointer;
         }
+
         .form-group button:hover {
             background-color: #003b7d;
         }
+
         .form-group small {
             display: block;
             font-size: 12px;
@@ -108,13 +131,15 @@
             padding: 20px;
             text-align: center;
             font-size: 14px;
-            margin-top: auto; /* Push the footer to the bottom */
+            margin-top: auto; 
         }
+
         .footer a {
             color: #ffd700;
             text-decoration: none;
             font-weight: bold;
         }
+
         .footer a:hover {
             text-decoration: underline;
         }
@@ -143,7 +168,7 @@
         <a href="#">Menu</a>
     </nav>
     <div class="header-icons">
-        <img src="cart.png" alt="Cart Icon"> 
+        <img src="cart.png" alt="Cart Icon">
         <img src="photo.png" alt="Profile Icon"> 
     </div>
 </header>
