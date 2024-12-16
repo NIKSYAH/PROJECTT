@@ -16,11 +16,6 @@
             text-align: left; /* Align text to the left */
         }
 
-        .profile-container h2 {
-            text-align: center; /* Center the heading */
-            color: #004a9f; /* Header color matching the theme */
-        }
-
         .profile-info {
             margin-bottom: 15px; /* Spacing between info items */
         }
@@ -51,34 +46,49 @@
 
 </head>
 <body>
-    <!-- Navigation -->
-    <div class="sidebar">
-        <a href="dashboard.html">Dashboard</a>
-        <a href="#">Orders</a>
-        <a href="#">Product Management</a>
-        <a href="#">View Feedback</a>
-        <a href="settings.html">Settings</a>
-    </div>
-
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdownMenu');
+            dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+        }
+    
+        // Close the dropdown when clicking outside of it
+        window.onclick = function(event) {
+            if (!event.target.closest('.profile-icon-container')) {
+                const dropdown = document.getElementById('dropdownMenu');
+                dropdown.style.display = 'none';
+            }
+        }
+    </script>
+    
     <!-- Header -->
     <header class="header">
         <img src="LOGO.PNG" alt="ETS Logo">
         <nav>
-            <a href="#">Homepage</a>
+            <a href="body.html">Homepage</a>
             <a href="#">Menu</a>
         </nav>
         <div class="header-icons">
             <img src="CART.PNG" alt="Cart Icon">
-            <!-- Profile Icon as a Button -->
-            <button onclick="location.href='profile.html'" style="background: none; border: none; cursor: pointer;">
-                <img src="PROFILE.PNG" alt="Profile Icon">
-            </button>
+            
+            <!-- Profile Icon -->
+            <div class="profile-icon-container">
+                <button onclick="toggleDropdown()" style="background: none; border: none; cursor: pointer;">
+                    <img src="PROFILE.PNG" alt="Profile Icon">
+                </button>
+                <!-- Dropdown Menu -->
+                <div id="dropdownMenu" class="dropdown-menu">
+                    <a href="profile.html">Profile Page</a>
+                    <a href="settings.html">Settings Page</a>
+                    <a href="logout.php">Logout</a>
+                </div>
+            </div>
         </div>
     </header>
 
     <div class="content">
         <div class="profile-container">
-            <h2>User Profile</h2>
+            <h1>User Profile</h1><br>
             
             <div class="profile-info">
                 <label>Name:</label> 
