@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header and Footer</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding-top: 80px; /* Make room for the fixed header */
+            min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background-color: #004a9f;
+            color: white;
+            padding: 10px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-family: Arial, sans-serif;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .header img {
+            height: 60px;
+            width: auto;
+        }
+
+        .header nav {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .header nav a:hover {
+            color: #ffd700;
+        }
+
+        .header-icons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-icons img {
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+        }
+
+        .footer {
+            background-color: #004a9f;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            width: 100%;
+            margin-top: auto; /* Ensures the footer stays at the bottom */
+            font-family: Arial, sans-serif;
+        }
+
+        .footer a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
+            transition: text-decoration 0.3s;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <img src="PICTURE/LOGO.PNG" alt="Logo">
+        <nav>
+            <a href="#">Homepage</a>
+            <a href="#">Menu</a>
+        </nav>
+        <div class="header-icons">
+            <img src="PICTURE/CART.PNG" alt="Cart Icon">
+            <img src="PICTURE/PROFILE.PNG" alt="Profile Icon">
+        </div>
+    </header>
+
+    <footer class="footer">
+        2018 All Rights Reserved KTM Berhad. KTM Berhad shall not be liable for any loss or damage caused by the usage of any 
+        information obtained from this site. <br>
+        © Copyright 2018 by <a href="#">KTM Berhad</a>
+    </footer>
+
+</body>
+</html>
