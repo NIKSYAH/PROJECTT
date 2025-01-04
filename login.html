@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 600px; 
+            width: 100%;
+            margin: 50px auto; 
+            background: white;
+            padding: 40px; 
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .container h2 {
+            text-align: center;
+            margin-bottom: 25px; 
+            font-size: 28px; 
+            font-weight: bold;
+        }
+        .form-group {
+            margin-bottom: 20px; 
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px; 
+            font-weight: bold;
+            font-size: 16px; 
+        }
+        .form-group input {
+            width: 100%;
+            padding: 14px; 
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px; 
+        }
+        .form-group button {
+            width: 100%;
+            padding: 14px;
+            background-color: #004a9f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px; 
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #003b7d;
+        }
+
+        .header {
+            background-color: #004a9f;
+            color: white;
+            padding: 10px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .header img {
+            height: 60px;
+            width: auto;
+        }
+        .header nav {
+            display: flex;
+            gap: 20px;
+        }
+        .header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .header nav a:hover {
+            color: #ffd700;
+        }
+        .header-icons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .header-icons img {
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+        }
+
+        .footer {
+            background-color: #004a9f;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            margin-top: auto; 
+        }
+        .footer a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
+            transition: text-decoration 0.3s;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+            }
+            .header nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .header-icons {
+                justify-content: center;
+            }
+            .container {
+                max-width: 90%; 
+                padding: 20px; 
+            }
+            .container h2 {
+                font-size: 24px; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <img src="PICTURE\LOGO.png" alt="ETS Logo">
+        <nav>
+            <a href="#">Homepage</a>
+            <a href="#">Menu</a>
+        </nav>
+        <div class="header-icons">
+            <img src="PICTURE\CART.png" alt="Cart Icon"> 
+            <img src="PICTURE\PROFILE.png" alt="Profile Icon"> 
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Login</h2>
+        <form action="login.php" method="POST">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" required placeholder="Enter your password">
+            </div>
+            <div class="form-group">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+        <p style="text-align: center; margin-top: 15px;">
+            New User? <a href="register.html" style="color: #007BFF; text-decoration: none;">Register here</a><br>
+            Forgot Password? <a href="resetpass.html" style="color: #007BFF; text-decoration: none;">Reset password</a>
+        </p>
+    </div>
+
+    <footer class="footer">
+        2018 All Rights Reserved KTM Berhad. KTM Berhad shall not be liable for any loss or damage caused by the usage of any 
+        information obtained from this site. <br>
+        © Copyright 2018 by <a href="#">KTM Berhad</a>
+    </footer>
+
+</body>
+</html>
