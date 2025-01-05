@@ -10,11 +10,15 @@ if ($conn->connect_error) {
 
 // Check if form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    $email = trim($_POST['email']);
+    $password = trim($_POST['password']);
 
-    // Check if user exists in the admin table
-    $adminQuery = $conn->prepare("SELECT * FROM Admin WHERE email = ?");
+    if (empty($email) || empty($password)) {
+        die('Both email and password are required.');
+    }
+
+    // Admin login check
+    $adminQuery = $conn->prepare("SELECT username, password FROM Admin WHERE username = ?");
     $adminQuery->bind_param("s", $email);
     $adminQuery->execute();
     $adminResult = $adminQuery->get_result();
@@ -22,17 +26,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($adminResult->num_rows > 0) {
         $admin = $adminResult->fetch_assoc();
         if (password_verify($password, $admin['password'])) {
-            $_SESSION['user'] = $admin['name'];
+            $_SESSION['user'] = $admin['username'];
             $_SESSION['role'] = 'admin';
             header('Location: admin_dashboard.php'); // Redirect to admin dashboard
             exit();
         } else {
-            echo "Invalid password for admin.";
+            echo "<script>alert('Invalid password for admin.');</script>";
         }
     }
 
-    // Check if user exists in the Customer table
-    $userQuery = $conn->prepare("SELECT * FROM Customer WHERE email = ?");
+    $adminQuery->close();
+
+    // Customer login check
+    $userQuery = $conn->prepare("SELECT name, password FROM Customer WHERE email = ?");
     $userQuery->bind_param("s", $email);
     $userQuery->execute();
     $userResult = $userQuery->get_result();
@@ -41,15 +47,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $user = $userResult->fetch_assoc();
         if (password_verify($password, $user['password'])) {
             $_SESSION['user'] = $user['name'];
-            $_SESSION['role'] = 'user';
+            $_SESSION['role'] = 'customer';
             header('Location: user_dashboard.php'); // Redirect to user dashboard
             exit();
         } else {
-            echo "Invalid password for user.";
+            echo "<script>alert('Invalid password for customer.');</script>";
         }
+    } else {
+        echo "<script>alert('No account found with that email.');</script>";
     }
 
-    echo "Invalid login credentials.";
+    $userQuery->close();
 }
 
 $conn->close();
