@@ -5,75 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
-        /* CSS Code (same as your provided styles with slight adjustments) */
+        /* CSS Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         html, body {
             height: 100%;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
-
-        body {
             display: flex;
             flex-direction: column;
+            font-family: Arial, sans-serif;
         }
-
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            text-align: center;
+        }
+        .header {
+            background-color: #004a9f;
+            color: white;
+            padding: 10px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .header img {
+            height: 60px;
+            width: auto;
+        }
+        .header nav {
+            display: flex;
+            gap: 20px;
+        }
+        .header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .header nav a:hover {
+            color: #ffd700;
+        }
         .container {
-            max-width: 600px; 
-            width: 100%;
-            margin: 50px auto; 
+            max-width: 450px;
+            margin: 40px auto;
             background: white;
-            padding: 40px; 
+            padding: 30px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            flex-grow: 1;
         }
         .container h2 {
             text-align: center;
-            margin-bottom: 25px; 
-            font-size: 28px; 
-            font-weight: bold;
+            margin-bottom: 20px;
         }
         .form-group {
-            margin-bottom: 20px; 
+            margin-bottom: 20px;
         }
         .form-group label {
             display: block;
-            margin-bottom: 8px; 
-            font-weight: bold;
-            font-size: 16px; 
+            margin-bottom: 5px;
         }
         .form-group input {
             width: 100%;
-            padding: 14px; 
+            padding: 12px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            font-size: 16px; 
+            font-size: 14px;
+        }
+        .form-group input:focus {
+            border-color: #004a9f;
         }
         .form-group button {
             width: 100%;
-            padding: 14px;
+            padding: 12px;
             background-color: #004a9f;
             color: white;
             border: none;
             border-radius: 5px;
-            font-size: 18px; 
-            font-weight: bold;
+            font-size: 16px;
             cursor: pointer;
         }
         .form-group button:hover {
             background-color: #003b7d;
         }
-        .header, .footer {
+        .footer {
             background-color: #004a9f;
             color: white;
             padding: 20px;
             text-align: center;
-        }
-        .header img {
-            height: 60px;
+            font-size: 14px;
+            margin-top: auto;
         }
         .footer a {
             color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -81,6 +114,10 @@
 
 <header class="header">
     <img src="PICTURE/LOGO.png" alt="ETS Logo">
+    <nav>
+        <a href="#">Homepage</a>
+        <a href="#">Menu</a>
+    </nav>
 </header>
 
 <div class="container">
@@ -97,14 +134,16 @@
         <div class="form-group">
             <button type="submit">Login</button>
         </div>
+        <p style="text-align: center; margin-top: 15px;">
+            New User? <a href="register.html">Register here</a>
+        </p>
     </form>
-    <p style="text-align: center; margin-top: 15px;">
-        New User? <a href="register.html" style="color: #007BFF; text-decoration: none;">Register here</a><br>
-    </p>
 </div>
 
 <footer class="footer">
-    2018 All Rights Reserved KTM Berhad.
+    2018 All Rights Reserved KTM Berhad. KTM Berhad shall not be liable for any loss or damage caused by the usage of any 
+    information obtained from this site. <br>
+    © Copyright 2018 by <a href="#">KTM Berhad</a>
 </footer>
 
 </body>
